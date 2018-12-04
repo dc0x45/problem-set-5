@@ -371,7 +371,7 @@ function gymnastics() {
 	while (true) {
       input = prompt("Enter Score:");
       input = Number(input);
-      if(input >= 0 && height <= 10 && Number.isInteger(height)){
+      if(input >= 0 && height <= 10 && Number.isInteger(input)){
         break;
       };
     };
@@ -431,7 +431,55 @@ function reportCard() {
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
-  
+while (true){
+	let testsInput=prompt("Enter test score");
+	if(testsInput==-1){
+		break;
+	}
+	if(Number(testsInput)>=0 && Number(testsInput<=100)){
+		testTotal=Number(testsInput)+testTotal;
+		tests++;
+	}
+}
+while (true){
+	let quizInput=prompt("Enter quiz score");
+	if (quizInput==-1){
+	break;
+	}
+	if(Number(quizInput)>=0 && Number(quizInput)<=100){
+		quizTotal=Number(quizInput)+quizTotal;
+		quizzes++;
+	}
+}
+while(true){
+	let homeworkInput=prompt("Enter homework score");
+	if (homeworkInput==-1){
+		break;
+	}
+	if(Number(homeworkInput)>=0 && Number(homeworkInput)<=100){
+		homeworkTotal=Number(homeworkInput)+homeworkTotal;
+		homeworks++;
+	}
+}
+	
+let testAverage = (testTotal/tests).toFixed(2);
+let quizAverage = (quizTotal/quizzes).toFixed(2);
+let homeworksAverage = (homeworkTotal/homeworks).toFixed(2);
+grade = ((.6*testAverage) + (.3*quizAverage) + (.1*homeworksAverage)).toFixed(2);
+document.getElementById("report-card-output").innerHTML=("Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "+homeworksAverage+"</br>Grade: "+grade);
+
+  /////////////////////// DO NOT MODIFY
+  check('report-card', // DO NOT MODIFY
+    testTotal, ////////// DO NOT MODIFY
+    tests, ////////////// DO NOT MODIFY
+    quizTotal, ////////// DO NOT MODIFY
+    quizzes, //////////// DO NOT MODIFY
+    homeworkTotal, ////// DO NOT MODIFY
+    homeworks /////////// DO NOT MODIFY
+  ); //////////////////// DO NOT MODIFY
+  /////////////////////// DO NOT MODIFY
+}
+
 
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
